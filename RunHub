@@ -1,8 +1,6 @@
 local games = {
-	{Id = 135283118011104,Url="https://raw.githubusercontent.com/fameisunkown/roblox/refs/heads/main/fischkit"}
+	{Id = 6867603828,Url="https://raw.githubusercontent.com/fameisunkown/roblox/refs/heads/main/fischkit"}
 }
-
-
 ------
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
@@ -13,7 +11,7 @@ local Window = Rayfield:CreateWindow({
 	Theme = "Default",
 	DisableRayfieldPrompts = true,
 	DisableBuildWarnings = true,
-	
+
 	KeySystem = true, 
 	KeySettings = {
 		Title = "Run Hub",
@@ -25,12 +23,15 @@ local Window = Rayfield:CreateWindow({
 	}
 })
 
-local Tab = Window:CreateTab("--", "rewind") -- Title, Image
-Tab:CreateLabel("Loading..", "rewind")
+local Tab = Window:CreateTab("Misc") -- Title, Image
+Tab:CreateLabel("Loading ‣ "..tostring(game.GameId))
 local gameId = game.GameId
 
 for i,v in ipairs(games) do
 	if v.Id == gameId then
 		loadstring(game:HttpGet(v.Url))()
+		break
 	end
 end
+Rayfield:Destroy()
+
