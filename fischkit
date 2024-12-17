@@ -38,6 +38,7 @@ end
 
 MainTab:CreateDivider("Fishing")
 local fishingLabel = MainTab:CreateLabel("Status ‣ Not Fishing", "fish-symbol")
+local LastFished = 0
 MainTab:CreateToggle({
 	Name = "Autofish",
 	CurrentValue = false,
@@ -49,16 +50,14 @@ MainTab:CreateToggle({
 					fishingLabel:Set("Status ‣ Fishing")
 					local caughtFish = returnFish(maxKG or 0)
 					fishingLabel:Set(string.format("Status ‣ %s KG ‣ %s ID",tostring(caughtFish.Size),tostring(caughtFish.FishId)))
-					
-					if maxKG <= 45 then
-						task.wait(1.6)
-					else
-						task.wait(1.4)
-					end
+					task.wait(1.32)
 					
 					Remotes.CatchFish:FireServer()
 					fishingLabel:Set("Status ‣ Not Fishing")
-					task.wait(1.45)
+					task.wait(1.75)
+					LastFished=true
+					
+					
 				end
 			end)
 		else
