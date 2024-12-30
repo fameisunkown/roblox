@@ -1,5 +1,6 @@
 local games = {
-	{Id = 6867603828,Url="https://raw.githubusercontent.com/fameisunkown/roblox/refs/heads/main/fischkit"}
+	{Id = 6867603828,Url="https://raw.githubusercontent.com/fameisunkown/roblox/refs/heads/main/fischkit"},
+	{Id = 6921488918,Url="https://raw.githubusercontent.com/fameisunkown/roblox/refs/heads/main/kingvonobby.lua"},
 }
 ------
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
